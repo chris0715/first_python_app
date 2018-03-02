@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request
 
+students = []
+
 app = Flask(__name__)
 
 
@@ -10,4 +12,9 @@ def hello():
         new_student_name = request.form.get("name", "")
         new_student_last_name = request.form.get("last-name", "")
         return redirect(url_for("studendts_page"))
-    return "Hello World!"
+    
+    return render_template("index.html", students=students)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
