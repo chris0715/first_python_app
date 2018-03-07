@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>First python app</title>
+  
+</head>
+
+<body class="container-fluid">
+  <nav>
+    <ul></ul>
+  </nav>
+  <div class="jumbotron container">
+      <h1 class="text-center">Python Student Test</h1>
+
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.name}}</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <form action="/" method="POST">
+    <input class="form-control" name="name" type="text">
+    <input class="form-control" name="last-name">
+    <button class="btn">Submit</button>
+  </form>
+</body>
+
+</html>

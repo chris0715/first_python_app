@@ -2,11 +2,12 @@
 class Student:
     
     school_name =  "Springifeld Elementary"
+    id = 1
 
-    def __init__(self, name, student_id):
+    def __init__(self, name, lastname):
         self.name = name
-        self.id = student_id
-        # students.append(self)
+        self.lastname = lastname
+        self.id = 1
 
     def __str__(self):
         return "Student"

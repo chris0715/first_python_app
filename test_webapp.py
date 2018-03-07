@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request
+from Student import Student
 
 students = []
 
@@ -11,7 +12,9 @@ def hello():
         new_student_id = request.form.get("studendt-id", "")
         new_student_name = request.form.get("name", "")
         new_student_last_name = request.form.get("last-name", "")
-        return redirect(url_for("studendts_page"))
+        new_student = Student(new_student_name, new_student_last_name)
+        students.append(new_student)
+        return redirect(url_for("hello"))
     
     return render_template("index.html", students=students)
 
